@@ -59,4 +59,26 @@ function practiceSetUp() {
     practice(list);
 }
 
-document.querySelector('button').addEventListener('click', practiceSetUp);
+ion.sound({
+    sounds: [{
+        name: "bell_ring"
+        }],
+
+    // main config
+    path: "sounds/",
+    preload: true,
+    multiplay: true,
+    volume: 0.5
+});
+
+// play sound
+
+
+function setUpTimer() {
+    setTimeout(function () {
+        ion.sound.play("bell_ring");
+    }, 1000 * 60);
+}
+
+document.querySelector('#buttonLetters').addEventListener('click', practiceSetUp);
+document.querySelector('#buttonTimer').addEventListener('click', setUpTimer);
