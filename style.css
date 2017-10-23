@@ -28,5 +28,5 @@ main {
     margin: 0px auto;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-gap: 5px;
+    grid-gap: 4px;
 }
