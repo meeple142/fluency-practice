@@ -9,6 +9,15 @@ p {
     padding: 0;
 }
 
+h2 {
+    text-align: center;
+    background-color: green;
+    padding: 5px;
+    color: white;
+    margin: 5px 0;
+    opacity: 0;
+}
+
 main div {
     font-size: 30px;
     font-weight: bold;

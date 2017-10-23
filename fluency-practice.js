@@ -57,6 +57,8 @@ function practiceSetUp() {
     list = shuffleList(list);
 
     practice(list);
+    //this is here so if the letters are switched when the timer is running it resets the timer
+    resetTimer();
 }
 
 ion.sound({
@@ -73,11 +75,27 @@ ion.sound({
 
 // play sound
 
+var going = false;
+var timeOut;
+
+function resetTimer() {
+    clearTimeout(timeOut);
+    going = false;
+    document.querySelector('#going').style.opacity = 0;
+}
 
 function setUpTimer() {
-    setTimeout(function () {
-        ion.sound.play("bell_ring");
-    }, 1000 * 60);
+
+    if (!going) {
+        going = true;
+        document.querySelector('#going').style.opacity = 1;
+
+        //set up time to play sound
+        timeOut = setTimeout(function () {
+            resetTimer();
+            ion.sound.play("bell_ring");
+        }, 1000 * 60);
+    }
 }
 
 document.querySelector('#buttonLetters').addEventListener('click', practiceSetUp);
