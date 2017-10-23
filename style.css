@@ -1,0 +1,23 @@
+body {
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+main div {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+main {
+    max-width: 800px;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 5px;
+}
